@@ -1,16 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+
+function App() { 
+  const frames = Array.from({ length: 10 }, (_, index) => index + 1);
 
   return (
     <>
-      <h1>hello</h1>
+      {frames.map((frame, index) => (
+        <div key={index}>
+          <h2>{frame}</h2>
+          {index === 9 ? (  
+            <>
+            <div>
+            <input />
+            <input />
+            <input />
+            <button>Submit</button>
+            </div>
+            <p>score</p>
+            </>
+          ) : (
+            <>
+            <div>
+             <input />
+              <input />
+              <button>Submit</button>
+            </div>
+            <p>score</p>
+            </>
+          )}
+        </div>
+      ))}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
